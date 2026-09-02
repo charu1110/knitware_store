@@ -63,6 +63,7 @@
     <section class="hero">
       <span class="glow glow--1"></span>
       <span class="glow glow--2"></span>
+      <span class="glow glow--3"></span>
 
       <div class="container hero__inner">
         <div class="hero__copy reveal">
@@ -93,20 +94,13 @@
 
         <div class="hero__art reveal">
           <div class="hero__frame">
-            <div class="hero__hoodie" aria-hidden="true">
-              <svg viewBox="0 0 200 250" width="100%" height="auto" fill="none" stroke="#E3AC5F" stroke-width="2.6" stroke-linejoin="round">
-                <defs>
-                  <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#E3AC5F" stop-opacity=".22"/>
-                    <stop offset="100%" stop-color="#6E2B4B" stop-opacity=".22"/>
-                  </linearGradient>
-                </defs>
-                <path d="M70 38 38 58 20 104l27 12 8-18v116h90V98l8 18 27-12-18-46-32-20z" fill="url(#hg)"/>
-                <path d="M70 38c0 17 13 27 30 27s30-10 30-27"/>
-                <path d="M100 65v56" stroke-dasharray="6 7"/>
-                <path d="M74 142h52v36a26 26 0 0 1-52 0z" opacity=".6"/>
-                <path d="M55 202h90" opacity=".35"/>
-              </svg>
+            <div class="hero__photo">
+              <img src="https://images.pexels.com/photos/8217415/pexels-photo-8217415.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                   alt="Model wearing a Zonixa hooded sweatshirt" width="900" height="1125" fetchpriority="high" decoding="async" />
+            </div>
+            <div class="hero__inset" aria-hidden="true">
+              <img src="https://images.pexels.com/photos/31112215/pexels-photo-31112215.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
+                   alt="" width="600" height="400" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -149,6 +143,8 @@
 
         <div class="grid brands">
           <article class="brand brand--zonixa reveal">
+            <img class="brand__photo" src="https://images.pexels.com/photos/28701959/pexels-photo-28701959.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                 alt="" width="900" height="600" loading="lazy" decoding="async" />
             <p class="brand__tag">Label 01</p>
             <h3 class="brand__name">ZONIXA</h3>
             <p>Contemporary top wear built for daily rotation — round-neck tees, heavy hoodies and winter sweatshirts that survive real laundry cycles.</p>
@@ -162,6 +158,8 @@
           </article>
 
           <article class="brand brand--msp reveal">
+            <img class="brand__photo" src="https://images.pexels.com/photos/18060021/pexels-photo-18060021.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                 alt="" width="900" height="1125" loading="lazy" decoding="async" />
             <p class="brand__tag">Label 02</p>
             <h3 class="brand__name">MSP SPORTS</h3>
             <p>Performance and team wear — dry-fit polos, track pants, lowers and shorts cut for movement, with panel and colour options for clubs and schools.</p>
@@ -180,43 +178,74 @@
     <!-- ============ CATEGORIES ============ -->
     <section class="section section--tint" id="categories">
       <div class="container">
-        <header class="section__head section__head--center reveal">
+        <header class="section__head section__head--center reveal" data-tone="teal">
           <span class="eyebrow">What we make</span>
           <h2 class="title">Six categories, <em>endless</em> spec sheets.</h2>
         </header>
 
         <div class="grid grid--4">
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M74 40 40 56 22 104l28 12 8-16v96h84v-96l8 16 28-12-18-48-34-16z"/><path d="M74 40c0 15 12 24 26 24s26-9 26-24"/></svg></div>
-            <h3>T-Shirts</h3><span>Round neck · Polo · Ben collar</span>
+          <a class="cat reveal" href="products.html" data-tone="gold">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/4440574/pexels-photo-4440574.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Stack of neatly folded T-shirts" width="600" height="400" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M74 40 40 56 22 104l28 12 8-16v96h84v-96l8 16 28-12-18-48-34-16z"/><path d="M74 40c0 15 12 24 26 24s26-9 26-24"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>T-Shirts</h3><span>Round neck · Polo · Ben collar</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M70 34 40 52 22 96l26 12 8-18v112h88V90l8 18 26-12-18-44-30-18z"/><path d="M70 34c0 16 13 26 30 26s30-10 30-26"/><path d="M74 132h52v34a26 26 0 0 1-52 0z"/></svg></div>
-            <h3>Hoodies</h3><span>240–320 GSM · Zip &amp; pullover</span>
+
+          <a class="cat reveal" href="products.html" data-tone="teal">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/17281224/pexels-photo-17281224.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Man wearing a pullover hoodie" width="600" height="800" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M70 34 40 52 22 96l26 12 8-18v112h88V90l8 18 26-12-18-44-30-18z"/><path d="M70 34c0 16 13 26 30 26s30-10 30-26"/><path d="M74 132h52v34a26 26 0 0 1-52 0z"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Hoodies</h3><span>240–320 GSM · Zip &amp; pullover</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M74 40 40 56 22 104l28 12 8-16v84h84v-84l8 16 28-12-18-48-34-16z"/><path d="M58 184h84v16H58z"/></svg></div>
-            <h3>Sweatshirts</h3><span>Russian fleece · Sherpa lined</span>
+
+          <a class="cat reveal" href="products.html" data-tone="coral">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/8217415/pexels-photo-8217415.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Person in a white fleece sweatshirt" width="600" height="900" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M74 40 40 56 22 104l28 12 8-16v84h84v-84l8 16 28-12-18-48-34-16z"/><path d="M58 184h84v16H58z"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Sweatshirts</h3><span>Russian fleece · Sherpa lined</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M60 30h80v22l-8 158h-28l-4-104-4 104H68l-8-158z"/><path d="M60 52h80"/></svg></div>
-            <h3>Track Pants</h3><span>Cotton lycra · Zip pocket</span>
+
+          <a class="cat reveal" href="products.html" data-tone="sky">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/4571832/pexels-photo-4571832.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Track pants worn with sports shoes" width="600" height="400" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M60 30h80v22l-8 158h-28l-4-104-4 104H68l-8-158z"/><path d="M60 52h80"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Track Pants</h3><span>Cotton lycra · Zip pocket</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M62 34h76v18l-10 158h-24l-4-100-4 100H72L62 52z"/><path d="M62 52h76"/><path d="M76 210h24M124 210h-24" opacity=".4"/></svg></div>
-            <h3>Lowers</h3><span>Fleece · Side panel options</span>
+
+          <a class="cat reveal" href="products.html" data-tone="violet">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/9361404/pexels-photo-9361404.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Athlete in knitted training bottoms" width="600" height="900" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M62 34h76v18l-10 158h-24l-4-100-4 100H72L62 52z"/><path d="M62 52h76"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Lowers</h3><span>Fleece · Side panel options</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M58 60h84v18l-8 84h-28l-6-54-6 54H66l-8-84z"/><path d="M58 78h84"/></svg></div>
-            <h3>Shorts</h3><span>Dry fit · Team colours</span>
+
+          <a class="cat reveal" href="products.html" data-tone="lime">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/11001131/pexels-photo-11001131.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Runner in training shorts" width="600" height="400" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><path d="M58 60h84v18l-8 84h-28l-6-54-6 54H66l-8-84z"/><path d="M58 78h84"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Shorts</h3><span>Dry fit · Team colours</span></div>
           </a>
-          <a class="cat reveal" href="products.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="46" y="70" width="108" height="100" rx="12"/><path d="M70 70V52a30 30 0 0 1 60 0v18"/><path d="M78 110h44M78 132h30"/></svg></div>
-            <h3>Private Label</h3><span>Your brand, our floor</span>
+
+          <a class="cat reveal" href="products.html" data-tone="ember">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/15391103/pexels-photo-15391103.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Coloured thread cones used for labelling and stitching" width="600" height="900" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><rect x="46" y="70" width="108" height="100" rx="12"/><path d="M70 70V52a30 30 0 0 1 60 0v18"/><path d="M78 110h44"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Private Label</h3><span>Your brand, our floor</span></div>
           </a>
-          <a class="cat reveal" href="contact.html">
-            <div class="cat__art"><svg viewBox="0 0 200 240" width="90" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><circle cx="100" cy="120" r="58"/><path d="M100 92v56M72 120h56"/></svg></div>
-            <h3>Custom Spec</h3><span>Tell us the tech pack</span>
+
+          <a class="cat reveal" href="contact.html" data-tone="gold">
+            <div class="cat__photo">
+              <img src="https://images.pexels.com/photos/1212179/pexels-photo-1212179.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Rows of coloured thread spools" width="600" height="400" loading="lazy" decoding="async" />
+              <span class="cat__art" aria-hidden="true"><svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"><circle cx="100" cy="120" r="58"/><path d="M100 92v56M72 120h56"/></svg></span>
+            </div>
+            <div class="cat__body"><h3>Custom Spec</h3><span>Tell us the tech pack</span></div>
           </a>
         </div>
       </div>
@@ -225,7 +254,7 @@
     <!-- ============ FEATURED PRODUCTS ============ -->
     <section class="section" id="featured">
       <div class="container">
-        <header class="section__head reveal">
+        <header class="section__head reveal" data-tone="violet">
           <span class="eyebrow">Sample styles</span>
           <h2 class="title">Moving fastest <em>this season</em>.</h2>
           <p class="lede">A slice of the catalogue. Tap enquire on any style and it opens a WhatsApp message with the spec pre-filled.</p>
@@ -253,28 +282,28 @@
         </header>
 
         <div class="grid grid--4">
-          <article class="card reveal">
+          <article class="card reveal" data-tone="gold">
             <span class="card__num">01</span>
             <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
             <h3>Own manufacturing</h3>
             <p>Knitting, dyeing, cutting, stitching and finishing under one roof — so lead times and quality don't depend on a third party.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card reveal" data-tone="teal">
             <span class="card__num">02</span>
             <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/><path d="m4 7 8 4 8-4M12 21V11"/></svg></span>
             <h3>Fabric library</h3>
             <p>Eight core knits from 100% cotton to NS Bonded and Sherpa — matched to your season, price point and GSM.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card reveal" data-tone="coral">
             <span class="card__num">03</span>
             <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16V9M11 16V5M16 16v-4M21 16v-8"/></svg></span>
             <h3>Bulk-ready capacity</h3>
             <p>Runs from 50-piece trials to full season orders, with sampling before you commit a single roll of fabric.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card reveal" data-tone="sky">
             <span class="card__num">04</span>
             <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg></span>
             <h3>Custom branding</h3>
@@ -284,11 +313,48 @@
       </div>
     </section>
 
+    <!-- ============ INSIDE THE UNIT (GALLERY) ============ -->
+    <section class="section" id="floor">
+      <div class="container">
+        <header class="section__head reveal" data-tone="coral">
+          <span class="eyebrow">Inside the unit</span>
+          <h2 class="title">The floor, <em>unedited</em>.</h2>
+          <p class="lede">Knitting, cutting, stitching, checking, packing — this is where your order actually happens.</p>
+        </header>
+
+        <div class="gallery reveal">
+          <figure class="shot">
+            <img src="https://images.pexels.com/photos/31031051/pexels-photo-31031051.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Workers on the stitching lines of a garment unit" width="900" height="600" loading="lazy" decoding="async" />
+            <figcaption><b>Stitching hall</b>Dedicated lines per garment type</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="https://images.pexels.com/photos/31112215/pexels-photo-31112215.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Operator working an industrial sewing machine" width="700" height="467" loading="lazy" decoding="async" />
+            <figcaption><b>Machines</b>Industrial flatlock &amp; overlock</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Rolls of knitted fabric stacked in a warehouse" width="700" height="421" loading="lazy" decoding="async" />
+            <figcaption><b>Fabric store</b>Stocked before the season</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="https://images.pexels.com/photos/31091544/pexels-photo-31091544.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Quality check station in a textile facility" width="700" height="467" loading="lazy" decoding="async" />
+            <figcaption><b>Checking</b>Every piece, measured</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="https://images.pexels.com/photos/19644395/pexels-photo-19644395.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Coloured thread cones on a rack" width="700" height="467" loading="lazy" decoding="async" />
+            <figcaption><b>Trims</b>Thread, tape and label matching</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ FABRIC LIBRARY / SPLIT ============ -->
     <section class="section" id="fabrics">
       <div class="container split">
         <div class="split__art reveal">
           <div class="panel">
+            <div class="panel__photo">
+              <img src="https://images.pexels.com/photos/20578931/pexels-photo-20578931.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Cones of coloured yarn and thread" width="800" height="533" loading="lazy" decoding="async" />
+            </div>
             <p class="eyebrow">The library</p>
             <h3 class="title" style="font-size:clamp(1.5rem,3.4vw,2.2rem)">Knits we keep on the shelf</h3>
             <ul class="fabrics" style="margin-top:1.6rem">
@@ -337,6 +403,39 @@
           </blockquote>
           <figcaption>Retail buyer · Delhi NCR</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section__head reveal" data-tone="sky">
+          <span class="eyebrow">Before you order</span>
+          <h2 class="title">The questions buyers <em>always ask</em>.</h2>
+        </header>
+
+        <div class="faq reveal">
+          <details open>
+            <summary>What is the minimum order quantity?</summary>
+            <p>Most styles start at 50 pieces per design for hoodies and sweatshirts, and 100 pieces for T-shirts and bottom wear. Colour and size splits within that quantity are up to you.</p>
+          </details>
+          <details>
+            <summary>How long does an order take?</summary>
+            <p>Sampling takes about a week once the spec is agreed. Bulk usually ships 15–25 days after sample approval, depending on quantity, printing and the season — winter months run tighter.</p>
+          </details>
+          <details>
+            <summary>Can you make garments under my own brand?</summary>
+            <p>Yes. Private label is a large part of what we do — your woven label, printed neck tag, hang tag, poly bag and carton markings, all applied on our floor.</p>
+          </details>
+          <details>
+            <summary>Do you send samples before bulk?</summary>
+            <p>Always. You approve fit, shade and trims on a physical garment before a single roll of fabric is cut. Sample charges are adjusted against the bulk order.</p>
+          </details>
+          <details>
+            <summary>Do you ship outside Punjab?</summary>
+            <p>We despatch across India by road and courier, and handle export documentation for overseas buyers. Freight is quoted separately once the carton count is known.</p>
+          </details>
+        </div>
       </div>
     </section>
 

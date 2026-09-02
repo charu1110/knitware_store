@@ -25,67 +25,88 @@
     return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
   }
 
+  /* ---------- photography ----------
+     Hosted stock photos (Pexels CDN, free for commercial use, no attribution
+     required). `photo(id)` builds the URL; swap these ids for real product
+     shots when you have them — nothing else needs to change. */
+  function photo(id, w) {
+    return "https://images.pexels.com/photos/" + id + "/pexels-photo-" + id +
+           ".jpeg?auto=compress&cs=tinysrgb&w=" + (w || 900);
+  }
+
   /* ---------- product catalogue (shared by home + products page) ---------- */
   var PRODUCTS = [
     {
       name: "Heavy 320 GSM Round Neck Hoodie",
       brand: "Zonixa", cat: "hoodies", badge: "Bestseller",
-      meta: ["320 GSM", "Spun Fleece", "Logo ready"], moq: "MOQ 50 pcs", art: "hoodie"
+      meta: ["320 GSM", "Spun Fleece", "Logo ready"], moq: "MOQ 50 pcs",
+      art: "hoodie", pic: 28701959, tone: "gold"
     },
     {
       name: "Two Thread Fleece Round Neck Hoodie",
       brand: "Zonixa", cat: "hoodies", badge: "",
-      meta: ["240 GSM", "Two thread", "All sizes"], moq: "MOQ 50 pcs", art: "hoodie"
+      meta: ["240 GSM", "Two thread", "All sizes"], moq: "MOQ 50 pcs",
+      art: "hoodie", pic: 1482476, tone: "teal"
     },
     {
       name: "320 GSM Hoodie with Chest Print",
       brand: "Zonixa", cat: "hoodies", badge: "Custom print",
-      meta: ["320 GSM", "Screen print", "Russian Fleece"], moq: "MOQ 100 pcs", art: "hoodie"
+      meta: ["320 GSM", "Screen print", "Russian Fleece"], moq: "MOQ 100 pcs",
+      art: "hoodie", pic: 17281224, tone: "coral"
     },
     {
       name: "Heavy Zip Hoodie 320 GSM",
       brand: "Zonixa", cat: "hoodies", badge: "",
-      meta: ["320 GSM", "YKK-style zip", "Kangaroo pocket"], moq: "MOQ 50 pcs", art: "zip"
+      meta: ["320 GSM", "YKK-style zip", "Kangaroo pocket"], moq: "MOQ 50 pcs",
+      art: "zip", pic: 8217415, tone: "sky"
     },
     {
       name: "Dry Fit Ben Collar Half Sleeve T-Shirt",
       brand: "Zonixa", cat: "tshirts", badge: "Quick dry",
-      meta: ["Dry Fit", "Ben collar", "Sublimation"], moq: "MOQ 100 pcs", art: "tee"
+      meta: ["Dry Fit", "Ben collar", "Sublimation"], moq: "MOQ 100 pcs",
+      art: "tee", pic: 11671964, tone: "lime"
     },
     {
       name: "100% Cotton Round Neck T-Shirt",
       brand: "Zonixa", cat: "tshirts", badge: "",
-      meta: ["180 GSM", "Bio-washed", "20 shades"], moq: "MOQ 100 pcs", art: "tee"
+      meta: ["180 GSM", "Bio-washed", "20 shades"], moq: "MOQ 100 pcs",
+      art: "tee", pic: 4440566, tone: "violet"
     },
     {
       name: "Honeycomb Lycra Polo T-Shirt",
       brand: "MSP Sports", cat: "tshirts", badge: "",
-      meta: ["Honeycomb", "Lycra blend", "Tipped collar"], moq: "MOQ 100 pcs", art: "polo"
+      meta: ["Honeycomb", "Lycra blend", "Tipped collar"], moq: "MOQ 100 pcs",
+      art: "polo", pic: 3779453, tone: "coral"
     },
     {
       name: "Crew Neck Sweatshirt — Russian Fleece",
       brand: "Zonixa", cat: "sweatshirts", badge: "Winter",
-      meta: ["280 GSM", "Russian Fleece", "Rib cuff"], moq: "MOQ 50 pcs", art: "sweat"
+      meta: ["280 GSM", "Russian Fleece", "Rib cuff"], moq: "MOQ 50 pcs",
+      art: "sweat", pic: 29765480, tone: "gold"
     },
     {
       name: "NS Bonded Winter Sweatshirt",
       brand: "Zonixa", cat: "sweatshirts", badge: "",
-      meta: ["NS Bonded", "Sherpa lined", "Wind resistant"], moq: "MOQ 50 pcs", art: "sweat"
+      meta: ["NS Bonded", "Sherpa lined", "Wind resistant"], moq: "MOQ 50 pcs",
+      art: "sweat", pic: 102129, tone: "teal"
     },
     {
       name: "Slim Fit Track Pant — Cotton Lycra",
       brand: "MSP Sports", cat: "bottoms", badge: "",
-      meta: ["Cotton Lycra", "Zip pockets", "Taped side"], moq: "MOQ 100 pcs", art: "pant"
+      meta: ["Cotton Lycra", "Zip pockets", "Taped side"], moq: "MOQ 100 pcs",
+      art: "pant", pic: 4571832, tone: "sky"
     },
     {
       name: "Fleece Lower with Side Panels",
       brand: "MSP Sports", cat: "bottoms", badge: "Sports",
-      meta: ["Spun Fleece", "Elastic waist", "Custom panel"], moq: "MOQ 100 pcs", art: "pant"
+      meta: ["Spun Fleece", "Elastic waist", "Custom panel"], moq: "MOQ 100 pcs",
+      art: "pant", pic: 18060021, tone: "violet"
     },
     {
       name: "Dry Fit Training Shorts",
       brand: "MSP Sports", cat: "bottoms", badge: "",
-      meta: ["Dry Fit", "Drawcord", "Team colours"], moq: "MOQ 150 pcs", art: "short"
+      meta: ["Dry Fit", "Drawcord", "Team colours"], moq: "MOQ 150 pcs",
+      art: "short", pic: 11001131, tone: "lime"
     }
   ];
 
@@ -104,8 +125,12 @@
     var meta = p.meta.map(function (m) { return "<li>" + m + "</li>"; }).join("");
     var badge = p.badge ? '<span class="product__badge">' + p.badge + "</span>" : "";
     return '' +
-      '<article class="product reveal" data-cat="' + p.cat + '">' +
-        '<div class="product__media">' + badge + (ART[p.art] || ART.tee) + '</div>' +
+      '<article class="product reveal" data-cat="' + p.cat + '" data-tone="' + (p.tone || "gold") + '">' +
+        '<div class="product__media">' +
+          '<img src="' + photo(p.pic, 700) + '" alt="' + p.name + '" loading="lazy" decoding="async" width="700" height="875" />' +
+          badge +
+          '<span class="product__glyph" aria-hidden="true">' + (ART[p.art] || ART.tee) + '</span>' +
+        '</div>' +
         '<div class="product__body">' +
           '<p class="product__brand">' + p.brand + '</p>' +
           '<h3 class="product__name">' + p.name + '</h3>' +
