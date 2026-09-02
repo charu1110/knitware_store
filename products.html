@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse the Panwar Knitwear catalogue — Zonixa hoodies, sweatshirts and T-shirts, MSP Sports track pants, lowers and shorts. Bulk manufacturing from Ludhiana." />
+  <meta name="theme-color" content="#08080A" />
+  <title>Products — Panwar Knitwear Catalogue</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308080A'/%3E%3Cpath d='M18 44V20l14 16 14-16v24' fill='none' stroke='%23E3AC5F' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="topbar" aria-hidden="true">
+    <div class="topbar__track">
+      <span>Ludhiana, Punjab · India</span><span><b>ZONIXA</b> — everyday top wear</span><span>Bulk orders · MOQ from 50 pcs</span><span><b>MSP Sports</b> — active &amp; team wear</span><span>Custom logo, print &amp; label</span>
+      <span>Ludhiana, Punjab · India</span><span><b>ZONIXA</b> — everyday top wear</span><span>Bulk orders · MOQ from 50 pcs</span><span><b>MSP Sports</b> — active &amp; team wear</span><span>Custom logo, print &amp; label</span>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Panwar Knitwear home">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 24V8l9 10 9-10v16"/></svg>
+        </span>
+        <span class="logo__text">Panwar<small>Knitwear</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link is-active" href="products.html" aria-current="page">Products</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+          <li><a class="btn btn--wa" href="https://wa.me/919876045457" target="_blank" rel="noopener">WhatsApp us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary header__cta" href="contact.html">Get a quote</a>
+        <button class="burger" id="burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="pagehead">
+      <span class="glow glow--1"></span>
+      <div class="container pagehead__inner">
+        <p class="crumbs"><a href="index.html">Home</a> — Products</p>
+        <h1>The <em>catalogue</em>.</h1>
+        <p class="lede">Every style below is manufactured in our Ludhiana unit. Colours, GSM, trims and branding are all open to change — these are starting points, not limits.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="filters" id="filters" role="tablist" aria-label="Filter products by category">
+          <button class="filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All styles</button>
+          <button class="filter" type="button" data-filter="hoodies" role="tab" aria-selected="false">Hoodies</button>
+          <button class="filter" type="button" data-filter="tshirts" role="tab" aria-selected="false">T-Shirts</button>
+          <button class="filter" type="button" data-filter="sweatshirts" role="tab" aria-selected="false">Sweatshirts</button>
+          <button class="filter" type="button" data-filter="bottoms" role="tab" aria-selected="false">Bottom wear</button>
+        </div>
+
+        <div class="grid grid--products" id="productGrid"></div>
+
+        <p class="grid__empty" id="gridEmpty" hidden>No styles in this category yet — message us and we'll quote it anyway.</p>
+
+        <noscript><p class="grid__empty">Enable JavaScript to browse the catalogue, or call +91 98760 45457 for the current line sheet.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============ SPEC / OPTIONS ============ -->
+    <section class="section section--tint">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">Open to spec</span>
+          <h2 class="title">Change anything <em>on the sheet</em>.</h2>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18" opacity=".5"/></svg></span>
+            <h3>Fabric &amp; GSM</h3>
+            <p>From 160 GSM cotton tees up to 320 GSM heavy fleece hoodies. Bonded and Sherpa options for deep winter.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg></span>
+            <h3>Colours &amp; sizes</h3>
+            <p>Standard shade card plus lab-dip matching. Size sets from XS to 5XL, kids' curves available on request.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__ico"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 6 6 1-4.5 4.3L18 20l-6-3-6 3 1.5-6.7L3 9l6-1z"/></svg></span>
+            <h3>Branding</h3>
+            <p>Screen print, sublimation, embroidery, woven and printed labels, custom hang tags and poly-bag packing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow" style="justify-content:center">Ready when you are</span>
+          <h2 class="title">Get the <em>line sheet</em> and pricing.</h2>
+          <p class="lede">Tell us the styles and quantities you're planning and we'll send current rates with sampling timelines.</p>
+          <div class="cta__row">
+            <a class="btn btn--primary" href="contact.html">Request a quote</a>
+            <a class="btn btn--wa" href="https://wa.me/919876045457" target="_blank" rel="noopener">WhatsApp +91 98760 45457</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 24V8l9 10 9-10v16"/></svg>
+          </span>
+          <span class="logo__text">Panwar<small>Knitwear</small></span>
+        </a>
+        <p>Manufacturer of T-shirts, hoodies, sweatshirts and bottom wear in Ludhiana, Punjab — makers of ZONIXA and MSP Sports.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/></svg></a>
+          <a href="https://www.indiamart.com/" target="_blank" rel="noopener" aria-label="IndiaMART"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.5 11h-15z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></a>
+          <a href="https://wa.me/919876045457" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a13 13 0 0 1-6.3-5.5c-.5-.8-.8-1.7-.8-2.5 0-.9.5-1.6 1-1.9.2-.2.6-.2.8-.2h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.8 2 .5.4 1 .6 1.3.8.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.5-.1l2 1c.2.1.4.2.4.3.1.2.1.7 0 1.1z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">T-Shirts</a></li>
+          <li><a href="products.html">Hoodies</a></li>
+          <li><a href="products.html">Sweatshirts</a></li>
+          <li><a href="products.html">Track pants &amp; lowers</a></li>
+          <li><a href="products.html">Shorts</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="index.html#fabrics">Fabrics</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+919876045457">+91 98760 45457</a></li>
+          <li><a href="tel:+919815703769">+91 98157 03769</a></li>
+          <li><a href="tel:+919999982998">+91 99999 82998</a></li>
+          <li><span>Ludhiana, Punjab 141003, India</span></li>
+          <li><span>Mon–Sat · 10am – 7pm IST</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Panwar Knitwear. All rights reserved.</p>
+      <ul class="footer__legal">
+        <li><a href="contact.html">Enquiries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Catalogue</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/919876045457" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a13 13 0 0 1-6.3-5.5c-.5-.8-.8-1.7-.8-2.5 0-.9.5-1.6 1-1.9.2-.2.6-.2.8-.2h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.8 2 .5.4 1 .6 1.3.8.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.5-.1l2 1c.2.1.4.2.4.3.1.2.1.7 0 1.1z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
