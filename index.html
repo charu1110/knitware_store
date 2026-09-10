@@ -4,15 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Panwar Knitwear — T-shirt, hoodie and winter wear manufacturer in Ludhiana, Punjab. Home of ZONIXA and MSP Sports. Bulk manufacturing, custom prints, premium fabrics." />
-  <meta name="theme-color" content="#08080A" />
+  <meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16181F" media="(prefers-color-scheme: dark)" />
   <meta name="author" content="Panwar Knitwear" />
   <title>Panwar Knitwear — Knitwear Manufacturer in Ludhiana</title>
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308080A'/%3E%3Cpath d='M18 44V20l14 16 14-16v24' fill='none' stroke='%23E3AC5F' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308080A'/%3E%3Cpath d='M18 44V20l14 16 14-16v24' fill='none' stroke='%23EBBA6E' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500..800&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+
+  <!-- resolve the theme before first paint so there is no flash of the wrong one -->
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem("pk-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -49,6 +62,10 @@
       </nav>
 
       <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark theme" title="Switch theme">
+          <span class="theme-toggle__ico theme-toggle__ico--sun" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></span>
+          <span class="theme-toggle__ico theme-toggle__ico--moon" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.4A8.6 8.6 0 1 1 9.6 3.5a7 7 0 0 0 10.9 10.9z"/></svg></span>
+        </button>
         <a class="btn btn--primary header__cta" href="contact.html">Get a quote</a>
         <button class="burger" id="burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
           <span></span><span></span><span></span>

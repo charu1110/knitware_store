@@ -1,36 +1,70 @@
-# Panwar Knitwear — dark editorial website
+# Panwar Knitwear — dual-theme website
 
 A static, mobile-friendly site for **Panwar Knitwear**, the Ludhiana knitwear
 manufacturer behind the **ZONIXA** and **MSP Sports** labels. Content is modelled
-on panwarknitwear.com; the design is a fresh take on a dark theme — a soft
-charcoal base (`#16181F`, not black), editorial serif headlines, real
-photography, and a six-colour accent set that lights up on interaction.
+on panwarknitwear.com; the design is a modern take with two first-class themes —
+light "bold & bright" (off-white ground, ink borders, hard offset shadows,
+sticker badges) and dark "sleek glass" (deep charcoal, frosted chips, glowing
+accents) — set in **Outfit** over **Inter**, with real photography throughout.
 
 ## Pages
 
 | File | What's on it |
 |---|---|
-| `index.html` | Home — hero, fabric marquee, the two brand labels, category grid, sample styles, why-us, **floor gallery**, fabric library, quote, **FAQ**, CTA |
-| `products.html` | Full catalogue with category filters, spec/options, **lookbook gallery** |
-| `about.html` | Story, six-stage craftsmanship timeline, **floor gallery**, leadership, listings |
+| `index.html` | Home — hero, fabric marquee, the two brand labels, category grid, sample styles, why-us, floor gallery, fabric library, quote, FAQ, CTA |
+| `products.html` | Full catalogue with category filters, spec/options, lookbook gallery |
+| `about.html` | Story, six-stage craftsmanship timeline, floor gallery, leadership, listings |
 | `contact.html` | Enquiry form, phone lines, address, hours |
+| `quote.html` | Quote review and send (reached from the quote drawer) |
 
-Shared assets: `css/style.css`, `js/script.js`.
+Shared assets: `css/style.css`, `js/script.js`. No build step, no dependencies.
 
-## Colour
+## Running it locally
 
-Two layers. The **base** is a soft charcoal — `--bg` through `--surface-2` in
-`:root` — deliberately several steps lighter than black so photographs and text
-both sit comfortably on it.
+```bash
+python -m http.server 8899
+```
 
-On top, a **per-block accent** called `--tone`. Put `data-tone="teal"` (or
+Then visit http://127.0.0.1:8899/ — use HTTP rather than opening the files
+directly, since the theme choice and the quote builder both use `localStorage`.
+
+## Themes
+
+Light is the default; dark is an override. With nothing stored the site follows
+the OS preference, and the toggle in the header stores an explicit choice that
+then wins. An inline script in each `<head>` resolves the theme **before first
+paint**, so there is no flash of the wrong one.
+
+Colour works in two layers. The **base** is a set of semantic tokens — `--bg`,
+`--surface`, `--text`, `--line` and friends — defined twice: `1c. THEME — LIGHT`
+on `:root`, `1d. THEME — DARK` on `:root[data-theme="dark"]`.
+
+On top sits a **per-block accent** called `--tone`. Put `data-tone="teal"` (or
 `gold`, `violet`, `coral`, `sky`, `lime`, `ember`) on any card, tile, filter or
 section header and every accented part of it — icon, border, hover glow, badge,
-underline — follows that colour. Lists that should cycle through the palette
-(fabric chips, timeline stages, FAQ rows, contact rows) do it with `nth-child`
-rules, so adding an item picks up the next colour automatically.
+underline — follows that colour. Lists that should cycle the palette (fabric
+chips, timeline stages, FAQ rows, contact rows) do it with `nth-child` rules, so
+adding an item picks up the next colour automatically. Defaults stay gold.
 
-Defaults stay gold, so anything without a `data-tone` looks exactly as before.
+Every accent is deliberately **dark in the light theme and light in the dark
+theme**, so a single `--on-tone` token works for text sitting on any accent.
+
+## The quote builder
+
+Bulk buyers order several styles at once, so alongside the per-style "Enquire"
+button there is a quote basket:
+
+1. **Add to quote** on any catalogue card — the quantity pre-fills to that
+   style's MOQ, so a new line is valid by default.
+2. A **drawer** (available on every page) holds per-line quantity, colours, size
+   breakdown and branding options. Quantities are validated against the MOQ.
+3. **`quote.html`** reviews the whole list, takes your name, phone, deadline and
+   notes, and sends **one itemised WhatsApp message** covering every line.
+
+Progress survives reloads and navigation via `localStorage`. Long quotes degrade
+in three tiers — full format, then a compact one-line-per-style format, then a
+summary with the full list copied to the clipboard and shown in a text box — so
+a 12-style order never silently truncates in the `wa.me` URL.
 
 ## Images
 
@@ -43,40 +77,19 @@ page-level images are plain `<img>` tags with `loading="lazy"`, explicit
 To swap in your own product shots, drop them in an `img/` folder and replace the
 `pic` ids with paths — the card markup doesn't change.
 
-## How it works
+## Editing
 
-- **No build step, no dependencies.** Plain HTML/CSS/JS. Fonts come from Google
-  Fonts (Bodoni Moda + Inter); every graphic is inline SVG, so there are no
-  image files to manage.
-- **Product data lives in one place** — the `PRODUCTS` array at the top of
-  `js/script.js`. Both the home page's featured strip and the products page
-  render from it, so adding a style means adding one object.
-- **Enquiries go to WhatsApp.** The "Enquire" button on each card and the
-  contact form both open `wa.me` with the message pre-filled. The number is the
-  `WA_NUMBER` constant in `js/script.js` — change it there and in the `wa.me`
-  links in the HTML.
-- **Scroll reveals** use IntersectionObserver with a rect-based fallback, so
-  content can never get stuck invisible if the observer stays silent (hidden
-  containers, background tabs). `prefers-reduced-motion` disables all of it.
-
-## Running it locally
-
-Open `index.html` directly, or serve the folder:
-
-```bash
-python -m http.server 8899
-```
-
-Then visit http://127.0.0.1:8899/
-
-## Editing the theme
+Product data is a single `PRODUCTS` array at the top of `js/script.js`; both the
+home page's featured strip and the products page render from it, so adding a
+style means adding one object (with a stable `id` and a numeric `moqMin`).
 
 All colours, fonts, radii and spacing are CSS custom properties at the top of
-`css/style.css` (`:root`). Changing `--gold` and `--bg` re-skins the whole site;
-the accent set (`--teal`, `--violet`, `--coral`, `--sky`, `--lime`) sits right
-below it. To go back to a flatter, single-accent look, set every accent variable
-to `var(--gold)` — no markup changes needed.
+`css/style.css`. Changing `--gold` and `--bg` re-skins the site; the accent set
+sits right below. To go back to a flatter, single-accent look, point every
+accent variable at `var(--gold)` — no markup changes needed.
 
-Want it darker or lighter again? Move `--bg`, `--bg-2`, `--surface` and
-`--surface-2` together, and adjust the film-grain `opacity` in the `body::before`
-rule to match.
+The WhatsApp number lives in `WA_NUMBER` in `js/script.js` **and** in hardcoded
+`wa.me` links in the five HTML files; both must change together.
+
+See `CLAUDE.md` for the conventions, the load-bearing invariants, and the
+gotchas worth knowing before editing.
